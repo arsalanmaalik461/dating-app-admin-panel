@@ -1,177 +1,191 @@
-[![@coreui coreui](https://img.shields.io/badge/@coreui%20-coreui-lightgrey.svg?style=flat-square)](https://github.com/coreui/coreui)
-[![npm package][npm-coreui-badge]][npm-coreui]
-[![NPM downloads][npm-coreui-download]][npm-coreui]  
-[![@coreui react](https://img.shields.io/badge/@coreui%20-react-lightgrey.svg?style=flat-square)](https://github.com/coreui/react)
-[![npm package][npm-coreui-react-badge]][npm-coreui-react]
-[![NPM downloads][npm-coreui-react-download]][npm-coreui-react]  
-[![npm next][npm-next]][npm]
+<p align="center">
+  <img src="docs/assets/banner.svg" alt="Dating App Admin Panel Banner" width="100%">
+</p>
 
-[npm-coreui]: https://www.npmjs.com/package/@coreui/coreui
-[npm-coreui-badge]: https://img.shields.io/npm/v/@coreui/coreui.png?style=flat-square
-[npm-coreui-download]: https://img.shields.io/npm/dm/@coreui/coreui.svg?style=flat-square
-[npm-coreui-react]: https://www.npmjs.com/package/@coreui/react
-[npm-coreui-react-badge]: https://img.shields.io/npm/v/@coreui/react.png?style=flat-square
-[npm-coreui-react-download]: https://img.shields.io/npm/dm/@coreui/react.svg?style=flat-square
-[npm-next]: https://img.shields.io/npm/v/@coreui/react/next.png?style=flat-square
-[npm]: https://www.npmjs.com/package/@coreui/react
+<p align="center">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React">
+  <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" alt="Firebase">
+  <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap">
+</p>
 
-# CoreUI Free React Admin Template v3
+> **Developed by [Arslan Malik](https://github.com/arsalanmaalik461)**
+> 📱 WhatsApp: [+92 300 8987448](https://wa.me/923008987448) · 🌐 Website: [arslanmalik.tech](https://arslanmalik.tech)
 
-CoreUI is meant to be the UX game changer. Pure & transparent code is devoid of redundant components, so the app is light enough to offer ultimate user experience. This means mobile devices also, where the navigation is just as easy and intuitive as on a desktop or laptop. The CoreUI Layout API lets you customize your project for almost any device – be it Mobile, Web or WebApp – CoreUI covers them all!
+---
 
-## Table of Contents
+## 🌟 Executive Overview
 
-* [Versions](#versions)
-* [CoreUI Pro](#coreui-pro)
-* [Installation](#installation)
-* [Basic usage](#create-react-app)
-* [What's included](#whats-included)
-* [Documentation](#documentation)
-* [Versioning](#versioning)
-* [Creators](#creators)
-* [Community](#community)
-* [Copyright and License](#copyright-and-license)
+**Dating App Admin Panel** is a web-based administration dashboard for managing a dating app's backend data, built on **React 17 + CoreUI 3 (Bootstrap 4)** with **Firebase** as the live data layer. Admins sign in through Firebase authentication, then work from a responsive sidebar layout that covers every operational surface of a dating product: registered users, swipe activity, matches, subscriptions, reported accounts awaiting moderation, and seeker requests.
 
-## Versions
+State is managed with **Redux + thunk**, routing is lazy-loaded per module, and every view reads and writes the same Firestore collections the mobile app uses — `Users`, `SwipeCards`, `Matches`, `Conversations`, `SeekerRequest`, `Notifications` — so moderation decisions take effect immediately. A chart-powered dashboard (`Chart.js`) gives a quick visual pulse on activity. The repo ships with the full CoreUI admin template scaffolding (charts, widgets, pages, SCSS theming) customized into a dating-app operations console.
 
-* [CoreUI Free Bootstrap Admin Template](https://github.com/coreui/coreui-free-bootstrap-admin-template)
-* [CoreUI Free Angular 9+ Admin Template](https://github.com/coreui/coreui-free-angular-admin-template)
-* [CoreUI Free React.js Admin Template](https://github.com/coreui/coreui-free-react-admin-template)
-* [CoreUI Free Vue.js Admin Template](https://github.com/coreui/coreui-free-vue-admin-template)
-* [CoreUI Free Laravel Admin Template](https://github.com/coreui/coreui-free-laravel-admin-template)
-* [CoreUI Free Vue.js + Laravel Admin Template](https://github.com/coreui/coreui-free-vue-laravel-admin-template)
+---
 
-## CoreUI Pro
+## 📑 Table of Contents
 
-**Only customers with [Enterpise Membership Plan](https://coreui.io/pro/#buy) have access to private github CoreUI Pro repository.**
+- [✨ Key Features & Highlights](#-key-features--highlights)
+- [🖥️ Feature Showcase](#️-feature-showcase)
+- [🏗️ System Architecture](#️-system-architecture)
+- [🚀 Quickstart & Installation Guide](#-quickstart--installation-guide)
+- [📂 Project Structure](#-project-structure)
+- [🛡️ Security & Notes](#️-security--notes)
 
-* 💪  [CoreUI Pro Bootstrap Admin Template](https://coreui.io/pro/)
-* 💪  [CoreUI Pro Angular 9+ Admin Template](https://coreui.io/pro/angular)
-* 💪  [CoreUI Pro React Admin Template](https://coreui.io/pro/react)
-* 💪  [CoreUI Pro Vue Admin Template](https://coreui.io/pro/vue)
-* 💪  [CoreUI Pro Laravel Admin Template](https://coreui.io/pro/laravel/)
-* 💪  [CoreUI Pro Vue.js + Laravel Admin Template](https://coreui.io/pro/vue-laravel/)
+---
 
-## Installation
+## ✨ Key Features & Highlights
 
-### Clone repo
+| Feature | Description |
+| :--- | :--- |
+| 👥 Users Management | Browse all registered users with a dedicated user-detail page per account. |
+| 🔄 Swiped Users | Inspect swipe-card activity from the `SwipeCards` Firestore collection. |
+| 💘 Match Users | Review formed matches between users (`Matches` collection). |
+| 💳 Subscription Users | Track which users hold paid subscriptions. |
+| 🚩 Reported Users | Moderation queue for reported accounts — review and act. |
+| 🔍 Seeker Requests | Manage incoming seeker/connection requests. |
+| 📊 Analytics Dashboard | Chart.js-powered charts and summary widgets for app activity. |
+| 🔐 Firebase Auth | Login and register pages backed by Firebase Authentication. |
+| 🛡️ Private Routes | Route guard so only signed-in admins reach the console. |
+| 🗄️ Redux State | Centralized store with actions, reducers, and thunk async flows. |
+| 🧭 CoreUI Shell | Responsive sidebar + header + footer layout from CoreUI for React. |
+| 🎨 Themed SCSS | Custom variables and overrides (`_custom.scss`, `_variables.scss`) on the CoreUI theme. |
+| ⚡ Lazy-Loaded Views | Each route code-splits, so the initial bundle stays lean. |
 
-``` bash
-# clone the repo
-$ git clone https://github.com/coreui/coreui-free-react-admin-template.git my-project
+---
 
-# go into app's directory
-$ cd my-project
+## 🖥️ Feature Showcase
 
-# checkout stable version
-$ git checkout master
+### 1. User Management & Moderation
 
-# install app's dependencies
-$ npm install
+> Full visibility into every account, plus a moderation queue for trouble.
+
+- Users list with drill-down to a per-user detail page and profile view
+- **Reported Users** view surfaces flagged accounts for review
+- All reads/writes hit Firestore directly, so actions apply instantly to the live app
+
+### 2. Matchmaking Oversight
+
+> Watch the dating engine's output: swipes, matches, and requests.
+
+- **Swiped Users** shows swipe-card activity (`SwipeCards`)
+- **Match Users** lists confirmed matches (`Matches`)
+- **Seeker Requests** manages pending seeker/connection requests (`SeekerRequest`)
+
+### 3. Dashboard Analytics
+
+> A visual pulse on the app's health.
+
+- Chart.js bar and line charts plus CoreUI summary widgets
+- Template scaffolding includes charts and widgets galleries for building more
+
+### 4. Auth & Access Control
+
+> The console is gated from the first screen.
+
+- Login and register pages backed by Firebase Authentication
+- `privateRoute` wrapper redirects unauthenticated visitors to login
+- Redux `authReducer` holds the session state across the app
+
+---
+
+## 🏗️ System Architecture
+
+```mermaid
+graph TD
+    V["React Views<br/>(Dashboard, Users, Matches,<br/>Reported Users, Subscriptions, ...)"]
+    RTR["React Router<br/>Lazy-loaded routes<br/>+ privateRoute guard"]
+    RD["Redux Store<br/>actions / reducers<br/>redux-thunk"]
+    FB["Firebase<br/>Authentication"]
+    FS["Firestore Collections<br/>Users · SwipeCards · Matches<br/>Conversations · SeekerRequest<br/>Notifications"]
+    UI["CoreUI Shell<br/>Sidebar · Header · Footer<br/>Bootstrap 4 SCSS theme"]
+
+    V --> RTR
+    V --> RD
+    RD --> FB
+    RD --> FS
+    V --> UI
+    RTR --> UI
 ```
 
-### Copy and Paste
+---
 
-Copy all your files to your project folder and then,
+## 🚀 Quickstart & Installation Guide
 
-``` bash
-# go into app's directory
-$ cd my-project
+### Prerequisites
 
-# install app's dependencies
-$ npm install
-```
+- Node.js (LTS) and npm
+- A Firebase project with Authentication and Firestore enabled
 
-## Create React App
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
-
-see also:
-[CRA docs](https://create-react-app.dev/docs/getting-started)
-
-### Basic usage
-
-``` bash
-# dev server with hot reload at http://localhost:3000
-$ npm start
-```
-
-Navigate to [http://localhost:3000](http://localhost:3000). The app will automatically reload if you change any of the source files.
-
-### Build
-
-Run `build` to build the project. The build artifacts will be stored in the `build/` directory.
+### Step-by-Step Installation
 
 ```bash
-# build for production with minification
-$ npm run build
+# 1. Clone the repo
+git clone https://github.com/arsalanmaalik461/dating-app-admin-panel.git
+cd dating-app-admin-panel
+
+# 2. Install dependencies
+npm install
+
+# 3. Point the app at your Firebase project
+#    Update src/firebase/firebase.js with your project's config
+#    (apiKey, authDomain, projectId, ...)
+
+# 4. Run the dev server
+npm start
+# → opens http://localhost:3000
+
+# 5. Build for production
+npm run build
 ```
 
-## What's included
+---
 
-Within the download you'll find the following directories and files, logically grouping common assets and providing both compiled and minified variations. You'll see something like this:
+## 📂 Project Structure
 
 ```
-CoreUI-React#v3.0.0
-├── public/          #static files
-│   └── index.html   #html template
-│
-├── src/             #project root
-│   ├── assets/      #assets - js icons object
-│   ├── containers/  #container source - template layout
-|   │   ├── _nav.js  #sidebar config
-|   │   └── ...      
-│   ├── scss/        #user scss/css source
-│   ├── views/       #views source
-│   ├── App.js
-│   ├── App.test.js
-│   ├── polyfill.js
-│   ├── index.js
-│   ├── routes.js    #routes config
-│   └── store.js     #template state example 
-│
-└── package.json
+dating-app-admin-panel/
+├── public/                   # Static assets (index.html, manifest, avatars, favicon)
+├── src/
+│   ├── App.js / index.js     # App entry, store wiring
+│   ├── Home.js               # Landing/home view
+│   ├── routes.js             # Lazy-loaded route map (dashboard, users, matches, ...)
+│   ├── privateRoute.js       # Auth guard for protected routes
+│   ├── actions/              # Redux actions + action types
+│   ├── reducers/             # authReducer, rootReducer
+│   ├── store/                # Redux store configuration
+│   ├── firebase/             # Firebase init + Firestore collection names
+│   ├── containers/           # CoreUI shell: sidebar, header, footer, nav, layout
+│   ├── views/
+│   │   ├── dashboard/        # Analytics dashboard
+│   │   ├── users/            # Users list, user detail, profile
+│   │   ├── matches/          # Match users
+│   │   ├── swiped_users/     # Swipe activity
+│   │   ├── subscriptions/    # Subscription users
+│   │   ├── reported_users/   # Moderation queue
+│   │   ├── seekers/          # Seeker requests
+│   │   ├── charts/           # Chart.js examples
+│   │   ├── widgets/          # CoreUI widget gallery
+│   │   └── pages/            # Login, register, 404, 500
+│   ├── reusable/             # Shared components (image component, ...)
+│   ├── utilits/              # General data helpers
+│   ├── assets/               # CoreUI icons & logos
+│   └── scss/                 # Theme variables and custom styles
+├── package.json              # React 17 + CoreUI 3 + Firebase dependencies
+└── README.md
 ```
 
-## Documentation
+---
 
-The documentation for the CoreUI Admin Template is hosted at our website [CoreUI for React](https://coreui.io/react/)
+## 🛡️ Security & Notes
 
-### :film_strip: How to setup coreui react theme in laravel. Video tutorial available [here](https://youtu.be/HVVpbpNUJ8M)
+- This console reads and writes live user data — **restrict Firestore access with security rules** so only admin accounts can read/write these collections.
+- Client-side `privateRoute` is a UX guard, not a security boundary; enforce roles in Firebase (custom claims or rules).
+- Never commit real Firebase credentials — keep them in environment config; the shipped `.env` is a placeholder.
+- Reported-user moderation actions are immediate in Firestore — consider an audit trail for who actioned what.
+- The panel targets desktop admins; verify the responsive layout if used on tablets/phones.
 
-## Versioning
+---
 
-For transparency into our release cycle and in striving to maintain backward compatibility, CoreUI Free Admin Template is maintained under [the Semantic Versioning guidelines](http://semver.org/).
-
-See [the Releases section of our project](https://github.com/coreui/coreui-free-react-admin-template/releases) for changelogs for each release version.
-
-## Creators
-
-**Łukasz Holeczek**
-* <https://twitter.com/lukaszholeczek>
-* <https://github.com/mrholek>
-* <https://github.com/coreui>
-
-**CoreUI team**
-* https://github.com/orgs/coreui/people
-
-## Community
-
-Get updates on CoreUI's development and chat with the project maintainers and community members.
-
-- Follow [@core_ui on Twitter](https://twitter.com/core_ui).
-- Read and subscribe to [CoreUI Blog](https://coreui.ui/blog/).
-
-
-## Copyright and License
-
-copyright 2020 creativeLabs Łukasz Holeczek.   
-
- 
-Code released under [the MIT license](https://github.com/coreui/coreui-free-react-admin-template/blob/master/LICENSE).
-There is only one limitation you can't can’t re-distribute the CoreUI as stock. You can’t do this if you modify the CoreUI. In past we faced some problems with persons who tried to sell CoreUI based templates.
-
-## Support CoreUI Development
-
-CoreUI is an MIT licensed open source project and completely free to use. However, the amount of effort needed to maintain and develop new features for the project is not sustainable without proper financial backing. You can support development by buying [CoreUI Pro Version](https://coreui.io/pro/).
-
-We're also open to conversations regarding custom sponsorship / consulting arrangements. Get in touch on [Twitter](https://twitter.com/lukaszholeczek).
+<p align="center">
+  <sub>Developed with ❤️ by <a href="https://github.com/arsalanmaalik461">Arslan Malik</a> · 📱 <a href="https://wa.me/923008987448">WhatsApp: +92 300 8987448</a> · 🌐 <a href="https://arslanmalik.tech">arslanmalik.tech</a></sub>
+</p>
